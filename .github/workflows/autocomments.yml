@@ -1,0 +1,17 @@
+name: Autocomment
+
+on: pull_request
+
+jobs:
+  comment:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Autocomment
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          msg: "Thanks for the feedback, it helps a lot!"
+          check_for_duplicate_msg: false 
